@@ -10,7 +10,7 @@ nltk==3.8.1
 numpy==1.26.4
 packaging==23.2
 pandas==2.2.1
-pyenchant==2.0.0
+pyenchant==1.6.6
 python-dateutil==2.9.0.post0
 pytz==2024.1
 regex==2023.12.25
