@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Generate-a-Word - {% block title %}{% endblock title %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script src="https://kit.fontawesome.com/17c79564e0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- <div class="navigation">
+      {% include("_navigation.html") %}
+    </div> -->
+    <div class="header">
+      <div class="title">
+        <!-- <h1>Neologinator</h1> -->
+        <h1><a href="{{ url_for('pages.home') }}">Neologinator</a></h1>
+      </div>
+    </div>
+
+    <div class="subtitle">
+      <header>
+        {% block header %}{% endblock header %}
+      </header>
+    </div>
+    {% block content %}{% endblock content %}
+    <div class="footer">
+      <div class="navigation">
+        {% include("_navigation.html") %}
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</body>
+</html>

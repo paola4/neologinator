@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <!-- <h2>{% block title %}About{% endblock title %}</h2> -->
+{% endblock header %}
+
+{% block content %}
+<div class="content about">
+    <div class="content-text">
+        Neologinator is a generator of made-up words.
+    </div>
+    <div class="definition-wrapper">
+        <div class="definition-box">
+            <div class="card">
+                <div class="definition-title">Neolog-</div>
+                <p>from neologism (referring to a new word).</p>
+            </div>
+            <!-- <div class="definition-title">Neolog-</div>
+            <p>from neologism (referring to a new word).</p> -->
+        </div>
+        <div class="icon">
+            <i class="icon fa-solid fa-plus"></i>
+        </div>
+        <div class="definition-box">
+            <div class="card">
+                <div class="definition-title">-inator</div>
+                <p>a device, or tool.</p>
+            </div>
+            <!-- <div class="definition-title">-inator</div>
+            <p>-inator: a device, or tool.</p> -->
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

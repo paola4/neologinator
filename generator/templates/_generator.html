@@ -1,0 +1,68 @@
+
+<head>
+<!-- TO DO: 
+        - Currently prints as a list; modify to print nicer.    
+-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type=text/javascript>
+        $(function() {
+            $('a#process_input').bind('click', function() {
+            $.post('/generate_pseudowords', {  
+                num: $('input[name="num"]').val(),
+                ngram: $('select[name="ngram"]').val(),
+            }, function(data) {
+                $('#result').text(data.result);
+            });
+            return false;
+            });
+        });
+        
+    </script>
+</head>
+
+<div class="generator">
+    <form class="generator-form">
+        <!-- <textarea id="text_input" rows="1" cols="2" name=num></textarea> -->
+        <!-- <input type="number" min="1" max="100" name="num"> -->
+        <div class="select-n">
+            <p class="form-prompt"> Number of pseudowords to generate:</p>
+            <div class="range form-item">
+                <input type="range" min="1" max="100" value="1" id="range" name="num"/> 
+                <div class="value">1</div>
+            </div>
+        </div>
+        <div class ="select-ngram">
+            <div class="select-input form-item">
+                <p class="nobr form-prompt" style="grid-column: 1 / -1;"> n-gram:</p>
+                <input type="radio" id="ngram_selection" checked="checked" name="ngram" value="2">
+                <label for="html">2</label>
+                <input type="radio" id="ngram_selection" name="ngram" value="3">
+                <label for="html">3</label>
+                <input type="radio" id="ngram_selection" name="ngram" value="4">
+                <label for="html">4</label>
+                <input type="radio" id="ngram_selection" name="ngram" value="5">
+                <label for="html">5</label>
+                <!-- <select id="ngram_selection" name="ngram">
+                    <option selected="selected" value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select> -->
+            </div>
+        </div>
+    </form>
+    <div class="generator-button">
+        <a href=# id=process_input><button class="button-74" role="button">Generate</button></a>
+    </div>
+    <div class="generator-result">
+        <h2>Result</h2>
+        <p id=result> {{ result }}</p>
+        <!-- {% for key, value in result %}
+        <p>key</p>
+        <p>value</p>
+        {% endfor %} -->
+    </div>
+</div>
+
+
+<script type="text/javascript" src="static/js/generator.js"></script>
